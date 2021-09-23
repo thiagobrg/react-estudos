@@ -1,0 +1,104 @@
+Definição
+  - React é uma biblioteca para construção de interfaces.
+
+Uso 
+  - Construção de interfaces WEB, Mobile, TV, Realidade Virtual.
+
+Conceito: 
+  - SPA - Single Page Application
+    - Apenas a interface, estrutura HTML.
+    - Toda a estrutura é carregada somente uma vez. 
+      - ANTES: BACKEND ENVIAVA TODO O HTML A CADA REQUEST
+
+Quem usa:
+  - Facebook
+  - Twitter
+  - Freedcamp
+  - Rico
+  - Globo esporte
+  - Outlook
+
+- Ambiente de desenvolvimento
+  - https://www.notion.so/Ambiente-de-desenvolvimento-Trilha-ReactJS-e7a377d183134647a177b6a34785f8c3
+
+- Criando primeiro projeto
+  
+  - https://create-react-app.dev/
+  - npx create-react-app estudos
+
+  - Package.json
+    - Arquivo de configurações do projeto.
+      - Informações de nome, versão, licença, todas as dependencias.
+
+    - Todo projeto javascript gerenciado tem esse arquivo, node, etc.
+
+    - Dependencias.
+      - react-dom
+        - Biblioteca que sabe manipular e criar objetos no dom.
+
+      - react-scripts
+        - Todas as configurações para criação dos builds do projeto.
+
+      - babel
+        - Converte o codigo Javascript para que o navegador entenda.
+        - https://babeljs.io/
+        - Exemplo
+            const user = {
+              name: "Thiago",
+            }
+
+            console.log(user.name);
+            console.log(user.address?.name);
+
+      - webpack
+        - Configuração para como tratar os tipos de arquivos importados.
+        - Converte os arquivos que o browser não entende para um arquivo que ele entende.
+
+  - node_modules
+    - Codigo das dependencias.
+
+  - public
+    - Arquivos publicos, todos os arquivos que tem que ser carregado no primeiro request.
+
+  - src
+    - Codigo da nossa aplicação
+
+  - src/index.js
+    - Base de todo o projeto
+    - Primeiro objeto de renderização
+    
+- Iniciando o projeto
+
+- Limpando o Projeto
+
+  - Deleta Readme
+
+  - public
+    - Só fica o index.html
+
+  - src
+    - Só fica o App.js e index.js
+
+  - src/index.js
+      import React from 'react';
+      import ReactDOM from 'react-dom';
+      import App from './App';
+
+      ReactDOM.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>,
+        document.getElementById('root')
+      );
+
+    - src/App.js
+
+      function App() {
+        return (
+          <h1>Hello World</h1>
+        );
+      }
+
+      export default App;
+
+- Iniciando o projeto novamente
