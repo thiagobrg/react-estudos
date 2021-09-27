@@ -1,0 +1,27 @@
+- useEffect
+
+  - Disparar uma função quando algo acontecer na aplicação.
+  - Algo pode ser por exemplo uma variavel que mudou o valor, então preciso executar alguma função.
+
+  2 Parametros:
+
+    - A função que eu quero executar
+    - O que mudar
+
+    - Caso o segundo parametro esteja vazio a função só será executada uma vez.
+    - Somente quando a tela é carregada.
+
+    ** Não deixar sem o array do segundo parametro, caso a gente deixe em branco o App entra em loop.
+    ** Não atualizar uma variavel dentro da função que esteja sendo usada como dependencia, se não tb entra em loop.
+
+
+- Component key
+
+  - Sempre quando existir uma listagem com o map
+  - Usar a propriedade KEY.
+
+  - Informar para o React quem é a informação unica desse item
+  - Para que?
+  - É uma propriedade interna do React que ajuda ele a se localizar caso a listagem mudar.
+  - Com essa propriedade ele sabe quais elementos ele deve adicionar na renderização da tela, quais manter e quais remover da tela.
+
