@@ -12,6 +12,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Abaixo vemos um exemplo:
     <br>
     <br>
+
     ```JS
     const idade = 28
     const pi = 3.14
@@ -31,6 +32,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Combinação de "" ou '', quando é necessário usar uma citação é possível combinar os dois.
     <br>
     <br>
+    
     ```JS
     const citacao = 'O Thiago falou "Oi"! ';
     ```
