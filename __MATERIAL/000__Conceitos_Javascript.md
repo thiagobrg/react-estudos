@@ -1,8 +1,8 @@
 # Conceitos Basicos de javascript
 
 **Autor: Thiago Guimarães**<br>
-**Criado em: 06/10/2021**
-<br><br>
+**Criado em: 06/10/2021**<br>
+<br>
 Neste documento serão apresentados noções e conceitos de javascript.
 <br>
 ## Tipos de dados
@@ -10,8 +10,6 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Números no Javascript são representados pelo tipo Number.
     - Podem ter casas decimais ou não.
     - Abaixo vemos um exemplo:
-    <br>
-    <br>
 
     ```JS
     const idade = 28
@@ -30,16 +28,13 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Todos os tipos texto, caracteres, pontuação.
     - Para criar basta usar "" ou '', serão considerados como string.
     - Combinação de "" ou '', quando é necessário usar uma citação é possível combinar os dois.
-    <br>
-    <br>
-
+    
     ```JS
     const citacao = 'O Thiago falou "Oi"! ';
     ```
 
     - Para concatenar variáveis e texto existem 2 formas:
-    <br>
-    <br> 
+    
 
     ```JS
     const idade = 23;
@@ -47,8 +42,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     ```
 
     - Ou mais fácil usando Template String:
-    <br>
-    <br>
+    
 
     ```JS
     const idade = 23;
@@ -56,8 +50,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     ```
   - Boolean 
     - Armazena valores true ou false.
-    <br>
-    <br>
+    
 
     ```JS
     const testeFalso = false;
@@ -70,8 +63,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Primeira variável que surgiu no javascript.
     - Não tem escopo definido.
     - Problemas de declaração.
-    <br>
-    <br>
+    
 
     ```JS
     const verdadeiro = true;
@@ -91,8 +83,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - LET
     - Usada para casos aonde os valores são mutaveis.
     - Tem escopo definido.
-    <br>
-    <br>
+    
 
     ```JS
     const verdadeiro = true;
@@ -104,8 +95,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
       ```
 
     - No teste acima o codigo da erro porque o escopo da variavel let só esta dentro do if
-    <br>
-    <br>
+    
 
     ```JS
     const verdadeiro = true;
@@ -120,24 +110,21 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - CONST
     - Mesmo conceitos do tipo let, escopo bem definido.
     - Não pode ser reatribuida.
-    <br>
-    <br>
+    
 
     ```JS
     const a = "Teste";
     a = "Teste 2"; // ERROR
     ```
     - Não pode ser iniciada depois:
-    <br>
-    <br>
+    
 
     ```JS
     const a;
     a = "Teste 2"; // ERROR
     ```
     - Usando como um objeto:
-    <br>
-    <br>
+    
 
     ```JS
     const objeto = {
@@ -156,16 +143,14 @@ Neste documento serão apresentados noções e conceitos de javascript.
 
   - Existem valores no javascript, que são considerados como truthy ou falsy.
   - No exemplo a seguir e possivel verificar isso no caso de 0 e string vazia, esses valores serão considerados como falso.
-  <br>
-  <br>
+  
 
     ```JS
     console.log( 0 == false);
     console.log( "" == false);
     ```
   - Logo esses valores podem ser utilizados como operadores de negação ou afirmação, por exemplo em um IF:
-  <br>
-  <br>
+  
 
     ```JS
     const nome = "";
@@ -205,7 +190,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
 
   - No primeiro caso é executado uma conversão implícita.
   - Essa conversão implicita pode ocorrer em outros casos, como na concatenação:
-  <br><br>
+  
 
   ```JS
   // Converte o numero em String e concatena os dois valores.
@@ -213,8 +198,8 @@ Neste documento serão apresentados noções e conceitos de javascript.
   ```
 
   - Já no exemplo abaixo veremos um caso de conversão explicita.
-  <br><br>
   
+
   ```JS
   console.log(String(numero) + numeroString);
   console.log(numero + Number(numeroString));
