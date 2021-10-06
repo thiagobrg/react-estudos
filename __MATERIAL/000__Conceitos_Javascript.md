@@ -177,30 +177,30 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - Um valor em string caso seja um valor numerico valido pode ser convertido para number.
   - Nos casos onde existem comparações entre tipos o java script pode fazer essa conversão de forma implícida, como vamos ver no exemplo abaixo:
 
-  ```JS
-  const numero = 456;
-  const numeroString = "456";
+    ```JS
+    const numero = 456;
+    const numeroString = "456";
 
-  // Neste caso o numero será convertido para string e a igualdade será comprovada
-  console.log(numero == numeroString); // TRUE
+    // Neste caso o numero será convertido para string e a igualdade será comprovada
+    console.log(numero == numeroString); // TRUE
 
-  // Neste caso não há conversão, e como são tipos diferentes logo são diferentes.
-  console.log(numero === numeroString); // FALSE
-  ```
+    // Neste caso não há conversão, e como são tipos diferentes logo são diferentes.
+    console.log(numero === numeroString); // FALSE
+    ```
 
   - No primeiro caso é executado uma conversão implícita.
   - Essa conversão implicita pode ocorrer em outros casos, como na concatenação:
   
 
-  ```JS
-  // Converte o numero em String e concatena os dois valores.
-  console.log(numero + numeroString);
-  ```
+    ```JS
+    // Converte o numero em String e concatena os dois valores.
+    console.log(numero + numeroString);
+    ```
 
   - Já no exemplo abaixo veremos um caso de conversão explicita.
   
 
-  ```JS
-  console.log(String(numero) + numeroString);
-  console.log(numero + Number(numeroString));
-  ```
+    ```JS
+    console.log(String(numero) + numeroString);
+    console.log(numero + Number(numeroString));
+    ```
