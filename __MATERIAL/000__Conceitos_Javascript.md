@@ -32,7 +32,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Combinação de "" ou '', quando é necessário usar uma citação é possível combinar os dois.
     <br>
     <br>
-    
+
     ```JS
     const citacao = 'O Thiago falou "Oi"! ';
     ```
@@ -58,6 +58,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Armazena valores true ou false.
     <br>
     <br>
+
     ```JS
     const testeFalso = false;
     const testeVerdadeiro = true;
@@ -71,6 +72,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Problemas de declaração.
     <br>
     <br>
+
     ```JS
     const verdadeiro = true;
 
@@ -91,6 +93,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Tem escopo definido.
     <br>
     <br>
+
     ```JS
     const verdadeiro = true;
 
@@ -103,6 +106,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - No teste acima o codigo da erro porque o escopo da variavel let só esta dentro do if
     <br>
     <br>
+
     ```JS
     const verdadeiro = true;
     let frase;
@@ -118,6 +122,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Não pode ser reatribuida.
     <br>
     <br>
+
     ```JS
     const a = "Teste";
     a = "Teste 2"; // ERROR
@@ -125,6 +130,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Não pode ser iniciada depois:
     <br>
     <br>
+
     ```JS
     const a;
     a = "Teste 2"; // ERROR
@@ -132,6 +138,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
     - Usando como um objeto:
     <br>
     <br>
+
     ```JS
     const objeto = {
       nome: "Thiago",
@@ -151,6 +158,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - No exemplo a seguir e possivel verificar isso no caso de 0 e string vazia, esses valores serão considerados como falso.
   <br>
   <br>
+
     ```JS
     console.log( 0 == false);
     console.log( "" == false);
@@ -158,6 +166,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - Logo esses valores podem ser utilizados como operadores de negação ou afirmação, por exemplo em um IF:
   <br>
   <br>
+
     ```JS
     const nome = "";
 
@@ -182,6 +191,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - Um valor numerico pode ser convertido para uma string.
   - Um valor em string caso seja um valor numerico valido pode ser convertido para number.
   - Nos casos onde existem comparações entre tipos o java script pode fazer essa conversão de forma implícida, como vamos ver no exemplo abaixo:
+
   ```JS
   const numero = 456;
   const numeroString = "456";
@@ -196,6 +206,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - No primeiro caso é executado uma conversão implícita.
   - Essa conversão implicita pode ocorrer em outros casos, como na concatenação:
   <br><br>
+
   ```JS
   // Converte o numero em String e concatena os dois valores.
   console.log(numero + numeroString);
@@ -203,6 +214,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
 
   - Já no exemplo abaixo veremos um caso de conversão explicita.
   <br><br>
+  
   ```JS
   console.log(String(numero) + numeroString);
   console.log(numero + Number(numeroString));
