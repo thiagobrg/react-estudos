@@ -1,0 +1,202 @@
+Componentes
+
+    - São como as tags do html.
+    - São elementos do React
+    - São formas de organizar a aplicação em varios pedacinhos.
+
+    - Conceito:
+        - Função
+        - Sempre letra maiuscula (Convenção)
+        - Sempre um componente por arquivo (Convenção)
+
+- Criando primeiro componente
+    - Dentro de src, criar uma pasta chamada components
+    - Dentro dessa pasta criar um arquivo chamado UsersList.js
+
+        -----------------------------------
+            <section>
+                <h1>Listagem de usuarios</h1>
+                <ul>
+                    <li>
+                        <strong>Thiago Guimarães</strong>
+                        <p>Thiago tem 23 anos</p>
+                        <a href="http://github.com/thiagobrg" target="_blank" rel="noreferrer">Acessar github</a>
+                    </li>
+                </ul>
+            </section>
+        -----------------------------------
+
+
+- Transição entre HTML e JS 
+
+    let title = "Listagem de usuarios";
+
+
+    - Usando chaves é possivel incluir um codigo javascript
+
+        const user = {
+            name: "Thiago Guimarães"
+            description: "Thiago tem 23 anos",
+            link: "http://github.com/thiagobrg",
+        }
+
+        <li>
+            <strong>{user.name}</strong>
+            <p>{user.description}</p>
+            <a href={user.link}  target="_blank" rel="noreferrer">Acessar github</a>
+        </li>
+
+- Propriedades
+
+    - São atributos que podem ser passados para os componentes.
+    - Como no caso <a> existem o atibuto chamado href
+    - Para o componente funciona igual, são atributos que podem ser passados para um componente que vão exercer alguma função neste componente.
+
+    - Dentro da pasta components criar um novo componente chamado UserListItem.js
+
+            export function UserListItem(props) {
+
+            return (
+                <li>
+                    <strong>{props.name}</strong>
+                    <p>{props.description}</p>
+                    <a href={props.link}>Acessar github</a>
+                </li>
+                );
+            }
+
+    - Deletar o li do UsersList e usar o UserListItem
+
+        <ul>
+            <UserListItem name={user.name} description={user.description} link={user.link} />
+        </ul>
+
+    - Melhoria
+
+        export function UserListItem(props) {
+
+            return (
+                <li>
+                    <strong>{props.user.name}</strong>
+                    <p>{props.user.description}</p>
+                    <a href={props.user.link}>Acessar github</a>
+                </li>
+                );
+            }
+
+        <UserListItem user={user} />
+
+- Conceito de Estado
+
+    - Primeiro codigo
+
+        import React from "react";
+
+        function Counter() {
+        let counter = 0;
+
+        function incrementCounter() {
+            counter++
+            console.log(counter);
+        }
+            
+
+        return (
+            <div>
+            <h2>{counter}</h2>
+            <button type="button" onClick={incrementCounter}>
+                Incrementar
+            </button>
+            </div>
+        );
+        }
+
+        export default Counter;
+
+    - Mostrar que ao clicar no botão na tela não tem nenhum efeito mas no Console o valor esta realmente sendo alterado.
+    - O React não fica observando as variaveis para mudar elas no html.
+    - O valor dela realmente muda mas essa mudança não é refletida no codigo.
+    - Como fazer ser refletida?
+    - Introdução ao conceito de Estado.
+    - O estado é uma maneira de avisar ao React que é uma variavel que o seu valor deve ser refletido no HTML.
+    - Para usar essa função de estado utilizamos o hook useState.
+    - A função useState recebe como parametro o valor inicial da variavel.
+    - O retorno do useState é um array com 2 posições.
+        - Primeira posição é a propria variavel (GET)
+        - Segunda posição é a função para manipular aquela variavel (SET)
+
+    - Explicar o uso de [] desestruturação.
+
+        - const array = ["A", "B"];
+        - const [a, b] = ["A", "B"];
+
+
+    - Codigo
+
+        import React, { useState } from "react";
+
+        function Counter() {
+        const [counter, setCounter] = useState(0);
+
+        function incrementCounter() {
+            setCounter(counter + 1);
+            console.log(counter);
+        }
+            
+
+        return (
+            <div>
+            <h2>{counter}</h2>
+            <button type="button" onClick={incrementCounter}>
+                Incrementar
+            </button>
+            </div>
+        );
+        }
+
+        export default Counter;
+
+
+- Imutabilidade
+    
+    - Então esse hook useState usa o conceito de imutabilidade.
+    - Uma variavel não pode ter seu valor alterado, ou seja ela não pode ser alterada diretamente.
+    - Sempre vai receber um novo valor.
+
+    - Exemplo:
+
+        - let usuarios = ['Thiago', 'Guilherme'];
+        - usuarios.push('Marcos'); // ['Thiago', 'Guilherme', 'Marcos']
+
+        - O exemplo acima não funciona com o estado.
+
+         - let usuarios = ['Thiago', 'Guilherme'];
+         - usuarios = ['Thiago', 'Guilherme', 'Marcos'];
+
+         - Atraves da função set do estado é atribuido um novo valor ao array
+         - Precisa escrever o array todo de novo?
+         - Para não precisar escrever todo, no javascript existe um operator, funcionalidade, chama Spread Operator
+         - O Spread faz uma copia daquele valor 
+
+         usuarios = [...usuarios, 'Marcos'];
+
+         ** Não funciona só com array pode ser usado com objetos tb
+
+         let pessoa = { nome: "Thiago", idade : 23};
+         let pessoaEndereco = { rua: "Manoel Torres", numero: 200, bairro: "Bingen" };
+
+         pessoa = {...pessoa, endereco: {...pessoaEndereco}}
+           {"nome": "Thiago",
+            "idade": 23,
+            "endereco": {
+                "rua": "Manoel Torres",
+                "numero": 200,
+                "bairro": "Bingen"
+            }
+           }
+
+    - Voltando ao conceito de imutabilidade
+    - Por que isso?
+    - O React usa assim na sua implementação para monitorar diretamente um novo objeto na memoria e não uma alteração
+    - Ou seja é mais facil para ele monitorar que uma variavel nova foi criada do que uma que foi alterada. (Performance)
+
