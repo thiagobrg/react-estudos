@@ -14,6 +14,120 @@
     ** Não deixar sem o array do segundo parametro, caso a gente deixe em branco o App entra em loop.
     ** Não atualizar uma variavel dentro da função que esteja sendo usada como dependencia, se não tb entra em loop.
 
+    Para os nossos testes vamos criar um novo componente que iremo listar os repositorios publicos de qualquer usuario do GitHub.
+
+    Para isso utilizaremos a API publica do github
+    - https://docs.github.com/en/rest
+    - Usando o end point GET https://api.github.com/users/{user}/repos
+
+    1° Passo adicionar uma nova dependencia que ira facilitar as nossas requisições http
+      - Neste ponto vale lembrar que o javascript possui sua implementação fetch que ja faz essas chamadas, porem é mais complexa e  trabalhosa de se usar.
+
+      Para adicionar vamos ao terminar e digitamos o seguinte codigo:
+
+      yarn add axios
+
+    2° Criar o servico do Axios
+      - O axios é uma biblioteca que lida diretamente com requisições http de um jeito muito simples.
+      - Possui uma diferenças features que são muito utilizadas em aplicações React.
+      - Exemplo Interceptor.
+
+      Dentro do src criar uma pasta chama services e dentro dessa pasta um arquivo chamado api.js
+
+      import axios from "axios";
+
+      export const api = axios.create({
+        baseURL: "https://api.github.com/",
+      })
+
+      Colocar o codigo acima dentro do arquivo.
+      - O codigo acima esta criando uma instancia do axios e passando como default URL, ou seja a url base da api, o caminho base do github.
+
+    3° Vamos criar um novo componente chamado RepositoriesList
+      - Agora vamos criar o nosso componente que ira buscar e exibir os dados
+    
+      import React from 'react';
+
+      function RepositoriesList() {
+        return <div />;
+      }
+
+      export default RepositoriesList;
+
+      - Depois de criado o componente, utilizaremos o useEffect para buscar os dados na api do github.com/
+
+        import React, { useEffect, useState } from 'react';
+        import { api } from '../services/api';
+
+        
+          const user = "thiagobrg";
+
+          useEffect(() => {
+
+            api.get(`/users/${user}/repos`)
+            .then(response => {
+              console.log(response)
+            })
+            .catch(error => {
+              console.log("Aconteceu algo de errado na busca dos dados.")
+              console.error(error);
+            })
+
+          }, [])
+
+        export default RepositoriesList;
+
+        - O useEffect será executado assim que o componente for exibido em tela.
+        - Assim que buscar os dados, o console log ira mostrar qual foi a resposta do github
+        - Não esquecer de colocar o RepositoriesList dentro do App
+
+      - Agora iremos armazenar os valores recebidos dentro de uma variavel de estado.
+      - DESAFIO PARA OS ALUNOS
+
+      const [respositories, setRepositories] = useState([]);
+      .then(response => setRepositories(response.data))
+
+      - Porque uma variavel de estado? (Ver se alguem lembra)
+
+    4° Agora com os dados ja recuperados iremos exibilos em tela
+
+    Estrutura do nosso html
+
+        <table>
+          <thead>
+            <tr>
+              <th>Autor</th>
+              <th>Repositorio</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+
+      - Pedir para tentarem montar esses body sozinho usando map
+      - Sabendo que a estrutura do repository é essa 
+
+      {
+        name: "",
+        description: "",
+        owner: {
+          login: "",
+        }
+      }
+
+      - Resposta 
+
+      {respositories.map( repository => (
+          <tr key={repository.id}>
+            <td>{repository.owner.login}</td>
+            <td>{repository.name}</td>
+            <td>{repository.description}</td>
+          </tr>
+        ))}
+
+    
 
 - Component key
 

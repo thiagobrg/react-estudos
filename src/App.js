@@ -1,11 +1,10 @@
-import Counter from "./components/Counter";
-import UsersList from "./components/UsersList";
+import RepositoriesList from "./components/RepositoriesList";
+
 
 function App() {
   return (
     <>
-      <UsersList />
-      <Counter />
+      <RepositoriesList />
     </>
   );
 }
