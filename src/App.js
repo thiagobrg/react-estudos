@@ -1,5 +1,13 @@
+import Counter from "./components/Counter";
+import UsersList from "./components/UsersList";
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <UsersList />
+      <Counter />
+    </>
+  );
 }
 
 export default App;
