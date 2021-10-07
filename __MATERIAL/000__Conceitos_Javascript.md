@@ -262,9 +262,13 @@ Neste documento serão apresentados noções e conceitos de javascript.
 
   - São os métodos ou rotinas que tem que ser executadas, em determinado momento.
   - Existem 3 formas de declarar uma função em JavaScript.
+  
   <br>
+
   - Forma mais simples:
   
+  <br>
+
   ```JS
     function imprimeTexto(texto){
       console.log(texto)
@@ -278,7 +282,6 @@ Neste documento serão apresentados noções e conceitos de javascript.
     imprimeTexto(soma(5,2));
     imprimeTexto(soma("Meu nome é ","Thiago"));
   ```
-  <br>
   <br>
 
   - Como podemos ver acima no JavaScript não especificamos os tipos (Number, String) dos parâmetros.
@@ -310,7 +313,7 @@ Neste documento serão apresentados noções e conceitos de javascript.
 
   - Principal diferença entre as duas declarações, Hoisting (Elevação).
   <br>
-  <br>
+
   ```JS
   console.log(somarDoisValore(1,4));
   function somarDoisValore(a,b){
@@ -326,9 +329,10 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - O interpretador do javascript na hora que está lendo o código verifica todas as funções e var e eleva para o todo do código antes de executar.
   - Logo na nossa primeira declaração o código funciona sem problemas, ja na segunda não, pois a função soma está sendo declarada como uma variável const que não será elevada.
   <br>
-  <br>
 
   - Terceira forma de declaração, Arrow function:
+
+  <br>
 
   ```JS
   const imprimeTexto = texto => console.log(texto);
@@ -352,6 +356,8 @@ Neste documento serão apresentados noções e conceitos de javascript.
   
   - Array é uma estrutura de dados para armazenas uma sequencia de valores.
   - Declarando um array em JavaScript
+
+  <br>
 
   ```JS
   const array = [1,2,3,4];
