@@ -222,6 +222,8 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - Operador ternario ?
     -  Como em outras linguagens de programação o JavaScript possui o operador ternario.
 
+    <br>
+
     ```JS
     const condicao = true
     console.log(condicao ? "VERDADEIRO" : "FALSO");
@@ -230,6 +232,8 @@ Neste documento serão apresentados noções e conceitos de javascript.
   - Operador ternario simplificado **MUITO USADO NO REACT**
     - Esse operador na verdade é a simplificação do ternario para casos aonde só possuem uma ação a ser executada.
     - No exemplo abaixo fica mais claro a utilização desse operador.
+     
+    <br>
 
     ```JS
     const condicao = false;
@@ -239,8 +243,12 @@ Neste documento serão apresentados noções e conceitos de javascript.
     console.log(condicao && "FALSO");
     ```
 
+     <br>
+
     - O que acontece na verdade caso a condição seja verdadeira retorna/executa o codigo seguinte.
     - No React é utilizado muitas vezes quando precisamos renderizar um codigo somente se uma condição for verdadeira.
+
+    <br>
 
     ```
       return (
