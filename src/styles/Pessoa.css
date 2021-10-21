@@ -1,0 +1,49 @@
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+table thead tr th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 25%;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+#cadastro {
+  width: 50%;
+}
+
+#cadastro p {
+  font-size: 2rem;
+  margin-top: 75px;
+}
+
+#cadastro form input,
+#cadastro form button {
+  padding: 12px 20px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  margin-right: 4px;
+  width: calc(25% - 4px);
+}
