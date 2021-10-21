@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { api } from '../services/api';
+import { githubApi } from '../services/githubApi';
 
 function RepositoriesList() {
   const [respositories, setRepositories] = useState([]);
@@ -7,7 +7,7 @@ function RepositoriesList() {
 
   useEffect(() => {
 
-    api.get(`/users/${user}/repos`)
+    githubApi.get(`/users/${user}/repos`)
     .then(response => setRepositories(response.data))
     .catch(error => {
       console.log("Aconteceu algo de errado na busca dos dados.")

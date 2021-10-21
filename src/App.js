@@ -1,10 +1,10 @@
-import RepositoriesList from "./components/RepositoriesList";
+import Pessoas from "./components/Pessoas";
 
 
 function App() {
   return (
     <>
-      <RepositoriesList />
+      <Pessoas />
     </>
   );
 }
