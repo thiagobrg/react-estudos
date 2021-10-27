@@ -1,10 +1,10 @@
-import Pessoas from "./components/Pessoas";
+import NewPessoas from "./components/NewPessoas";
 
 
 function App() {
   return (
     <>
-      <Pessoas />
+      <NewPessoas />
     </>
   );
 }
