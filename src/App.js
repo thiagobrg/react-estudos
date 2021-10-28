@@ -1,12 +1,7 @@
-import NewPessoas from "./components/NewPessoas";
-
+import Routes from "./routes/Routes";
 
 function App() {
-  return (
-    <>
-      <NewPessoas />
-    </>
-  );
+  return (<Routes />);
 }
 
 export default App;
