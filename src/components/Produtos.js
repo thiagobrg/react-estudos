@@ -15,7 +15,7 @@ function Produtos() {
     preco: Yup.number().required("Preço é um campo obrigatorio").min(0.01, "O preço minimo deve ser de R$ 0.01").label("Preco").typeError('Preço deve ser um número valido')
   });
 
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -39,6 +39,10 @@ function Produtos() {
   function handleSave(data){
     guilhermeApi
       .post("/produtos", data)
+      .then(() => {
+        reset();
+        buscarProdutos();
+      })
       .catch(() => alert("Não foi possivel salvar o novo produto"));
   }
 

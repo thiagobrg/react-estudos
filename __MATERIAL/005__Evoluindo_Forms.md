@@ -299,9 +299,17 @@
     <br>
 
     ```JS
-    function handleSave(data){
+
+
+    const { register, handleSubmit, reset} = useForm();
+
+     function handleSave(data){
       guilhermeApi
         .post("/produtos", data)
+        .then(() => {
+          reset();
+          buscarProdutos();
+        })
         .catch(() => alert("Não foi possivel salvar o novo produto"));
     }
     ```
